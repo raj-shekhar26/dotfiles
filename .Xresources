@@ -1,0 +1,38 @@
+URxvt.font: xft:Hack:size=10
+URxvt.scrollBar: false
+URxvt.foreground: #E7ECEF
+URxvt.background: #16181E
+
+! black
+*.color0  : #5F75A6
+*.color8  : #566A96
+
+! red
+*.color1  : #FF686B
+*.color9  : #E05A5D
+
+! green
+*.color2  : #02c39a
+*.color10 : #02B08B
+
+! yellow
+*.color3  : #DDB870
+*.color11 : #CFAC69
+
+! blue
+*.color4  : #5294E2
+*.color12 : #4E8CD6
+
+! magenta
+*.color5  : #ef476f
+*.color13 : #E04368
+
+! cyan
+*.color6  : #20A88B
+*.color14 : #1D997F
+
+! white
+*.color7  : #E7ECEF
+*.color15 : #DEE3E6
+
+
