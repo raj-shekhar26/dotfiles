@@ -79,7 +79,7 @@ ctrl + Print
 	scrot -C
 
 # program launcher
-super + @space
+super + d
 	rofi -show drun
 
 # make sxhkd reload its configuration files:

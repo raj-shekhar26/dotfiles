@@ -1,8 +1,8 @@
 [colors]
-background = #00000000
-foreground = #E7ECEF
+background = #252733
+foreground = #D8DEE9
 bg-dark = #013841
-bg = #005D6F
+bg = #5EA672
 bg-light = #1093ac
 blue = #5294E2
 purple = #9b5de5
@@ -14,10 +14,11 @@ pink = #ef476f
 brown = b4896e
 
 [bar/mybar]
+override-redirect = true
 bottom = false
 fixed-center = true
 width = 100%
-height = 20
+height = 25
 background = ${colors.background}
 foreground = ${colors.foreground}
 radius = 0.0
@@ -38,7 +39,7 @@ font-3 = Font Awesome 5 Brands Regular:style=Regular:size=9;2
 
 ; Modules are added to one of the available blocks
 modules-left = bspwm
-modules-center = xwindow
+modules-center =
 modules-right = networkspeeddown pacman-updates battery wireless-network date 
 
 ;separator =
@@ -92,7 +93,7 @@ ws-icon-5 = movie;
 ws-icon-6 = extra;
 
 label-focused = %icon% %name%
-label-focused-background = ${colors.bg-light}
+label-focused-foreground = ${colors.bg}
 label-focused-padding = 2
 
 label-occupied = %icon%
@@ -124,7 +125,7 @@ type = internal/date
 interval = 5
 time = %H:%M
 format-prefix = "  "
-label = %time%
+label = "%time%  "
 
 [module/battery]
 type = internal/battery
@@ -161,41 +162,3 @@ unknown-as-up = true
 accumulate-stats = true
 
 label-connected = " %downspeed:7%"
-
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.foreground}
-label-close = 
-label-close-foreground = ${colors.foreground}
-
-
-menu-0-0 = 
-menu-0-0-exec = systemctl reboot
-menu-0-1 = 
-menu-0-1-exec = systemctl poweroff
-menu-0-2 = 
-menu-0-2-exec = systemctl suspend
-
-[module/mpd]
-type = internal/mpd
-
-host = 127.0.0.1
-port = 6600
-
-format-online = <label-song>
-icon-play = 
-icon-pause = 
-icon-stop = 
-icon-prev = 
-icon-next = 
-icon-seekb =  
-icon-seekf = 
-
-label-song-maxlen = 30
-label-song-ellipsis = true

@@ -1,6 +1,6 @@
 * {
-  background-color: #0B0C16;
-  text-color: #c5c8c6;
+  background-color: #252733;
+  text-color: #D8DEE9;
   spacing: 0;
   width: 512px;
 }
@@ -38,5 +38,5 @@ element {
 }
 
 element selected {
-  background-color: #21485E;
+  background-color: #457A54;
 }
