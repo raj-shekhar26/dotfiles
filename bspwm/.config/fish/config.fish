@@ -15,7 +15,9 @@ function fish_prompt
 end
 
 alias ls "ls -a"
+alias c "clear"
 alias search "pacman -Ss"
+alias pkgs "pacman -Qe"
 alias install "sudo pacman -S"
 alias update "sudo pacman -Syu"
 alias remove "sudo pacman -Rns"

@@ -1,7 +1,7 @@
 # terminal emulator
 
 super + Return
-	urxvt
+	termite
 
 # app keybindings
 
@@ -15,7 +15,7 @@ super + shift + f
 	pcmanfm
 
 super + shift + m
-	urxvt -e ncmpcpp
+	termite -e ncmpcpp
 
 # brightness keybindings
 
