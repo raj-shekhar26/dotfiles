@@ -91,8 +91,7 @@ ws-icon-5 = movie;
 ws-icon-6 = extra;
 
 label-focused = %icon% %name%
-label-focused-foreground = ${colors.nord7}
-#label-focused-background = ${colors.nord7}
+label-focused-foreground = ${colors.nord8}
 label-focused-padding = 2
 
 label-occupied = %icon%
