@@ -1,17 +1,15 @@
 [colors]
-background = #252733
+background = #2e3440
 foreground = #D8DEE9
-bg-dark = #013841
-bg = #5EA672
-bg-light = #1093ac
-blue = #5294E2
-purple = #9b5de5
-yellow = #ffaa5a
-green = #02c39a
-red = #FF686B
-darkred = #7F1A22
-pink = #ef476f
-brown = b4896e
+bg-2 = #3b4252
+bg-3 = #434c5e
+bg-4 = #4c566a
+nord7 = #8fbcbb
+nord8 = #88c0d0
+nord9 = #81a1c1
+nord10 = #5e81ac
+fg-2 = #e5e9f0
+fg-3 = #eceff4
 
 [bar/mybar]
 override-redirect = true
@@ -32,7 +30,7 @@ padding = 0
 module-margin = 2
 
 ; Fonts are defined using <font-name>;<vertical-offset>
-font-0 = Ubuntu:style=Bold:pixelsize=10;2
+font-0 = Cantarell Extra Bold:style=Bold:pixelsize=10;2
 font-1 = Font Awesome 5 Free Solid:style=Solid:size=9;2
 font-2 = Font Awesome 5 Free Regular:style=Regular:size=9;2
 font-3 = Font Awesome 5 Brands Regular:style=Regular:size=9;2
@@ -52,7 +50,7 @@ dim-value = 1.0
 ; Position of the system tray window
 tray-position = right
 tray-detached = false
-tray-maxsize = 20
+tray-maxsize = 22
 tray-background = ${colors.background}
 tray-offset-x = 0
 tray-offset-y = 0
@@ -93,17 +91,18 @@ ws-icon-5 = movie;
 ws-icon-6 = extra;
 
 label-focused = %icon% %name%
-label-focused-foreground = ${colors.bg}
+label-focused-foreground = ${colors.nord7}
+#label-focused-background = ${colors.nord7}
 label-focused-padding = 2
 
 label-occupied = %icon%
 label-occupied-padding = 2
 
 label-urgent = %icon%
-label-urgent-background = ${colors.red}
+label-urgent-background = ${colors.nord10}
 label-urgent-padding = 2
 
-label-empty = %icon%
+label-empty = 
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 2
 
@@ -140,7 +139,7 @@ format-full-prefix = 
 label-full = " 100%"
 
 ramp-capacity-0 = " "
-ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-0-foreground = ${colors.nord10}
 ramp-capacity-1 = " "
 ramp-capacity-2 = " "
 ramp-capacity-3 = " "

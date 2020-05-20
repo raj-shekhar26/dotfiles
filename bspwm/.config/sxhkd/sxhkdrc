@@ -1,80 +1,39 @@
-# terminal emulator
-
+# terminal
 super + Return
 	termite
 
-# app keybindings
-
-super + shift + b
-	firefox
-
-super + shift + c
-	code
-
-super + shift + f
-	pcmanfm
-
-super + shift + m
-	termite -e ncmpcpp
+# apps
+super + shift + {b,c,f,m,s}
+	{firefox,code,pcmanfm,termite -e ncmpcpp,termite -e scrcpy}
 
 # brightness keybindings
+XF86MonBrightness{Up,Down}
+	xbacklight {-inc,-dec} 10
 
-XF86MonBrightnessUp
-	xbacklight -inc 10
+# media keys
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
 
-XF86MonBrightnessDown
-	xbacklight -dec 10
-
-# media keybindings
-
-XF86AudioNext
-	mpc next
-
-XF86AudioPrev
-	mpc prev
-	
-XF86AudioPlay
-	mpc toggle
-
-XF86AudioStop
-	mpc stop
-
-# volume keybindings
-
-XF86AudioRaiseVolume
-	amixer -q sset Master,0 5+ unmute
-
-XF86AudioLowerVolume
-	amixer -q sset Master,0 5- unmute
-
+# volume
+XF86Audio{RaiseVolume,LowerVolume}
+	amixer -q sset Master,0 {'5+','5-'}
 XF86AudioMute
 	amixer -q sset Master,0 toggle
 
 
-# system keybindings
-super + F1
-	systemctl poweroff
+# system
+super + (F1,F2,F3}
+	systemctl {poweroff,reboot,suspend}
 
-super + F2
-	systemctl reboot
-
-super + F3
-	systemctl suspend
-
-super + F4
-	betterlockscreen -l blur
-
-super + F5
-	betterlockscreen -s blur
+# lockscreen
+super + {F4,F5}
+	betterlockscreen {-l,-s} blur
 
 # screenshot keybindings
-
 shift + Print
 	scrot -s '/home/raj/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png'
-
 Print
 	scrot '/home/raj/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png'
-
 ctrl + Print
 	scrot -C
 
@@ -86,9 +45,13 @@ super + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
-#
+# gaps
+super + g
+    bspc config window_gap 0
+super + shift + g
+    bspc config window_gap 10
+
 # bspwm hotkeys
-#
 
 # quit/restart bspwm
 super + shift + {q,r}

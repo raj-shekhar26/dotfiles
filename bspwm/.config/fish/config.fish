@@ -20,6 +20,8 @@ alias search "pacman -Ss"
 alias pkgs "pacman -Qe"
 alias install "sudo pacman -S"
 alias update "sudo pacman -Syu"
-alias remove "sudo pacman -Rns"
+alias rmv "sudo pacman -Rns"
 alias orphan "pacman -Qdtq"
 alias cache "sudo pacman -Sc"
+
+

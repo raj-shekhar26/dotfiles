@@ -43,12 +43,8 @@ scrollback_lines = 10000
 [colors]
 # If both of these are unset, cursor falls back to the foreground color,
 # and cursor_foreground falls back to the background color.
-#cursor = #dcdccc
 #cursor_foreground = #dcdccc
 
-foreground = #D8DEE9
-#foreground_bold = #ffffff
-background = #252733
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
@@ -57,27 +53,51 @@ background = #252733
 highlight = #2f2f2f
 
 # Colors from color0 to color254 can be set
-color0 = #72757c
-color1 = #ef6060
-color2 = #5192d9
-color3 = #d9aa1a
-color4 = #28ca70
-color5 = #ed4b84
-color6 = #759F7B
-color7 = #aeb5bd
-color8 = #90969e
-color9 = #fb5858
-color10 = #379bdd
-color11 = #e6a800
-color12 = #12c177
-color13 = #e42f6e
-color14 = #498159
-color15 = #c6cdc8
+[colors]
+
+# special
+foreground      = #d8dee9
+foreground_bold = #d8dee9
+cursor          = #d8dee9
+background      = #2e3440
+
+# black
+color0  = #4c566a
+color8  = #434c5e
+
+# red
+color1  = #ea9f87
+color9  = #d08770
+
+# green
+color2  = #b1cc99
+color10 = #a3be8c
+
+# yellow
+color3  = #ecd099
+color11 = #ebcb8b
+
+# blue
+color4  = #81a1c1
+color12 = #5e81ac
+
+# magenta
+color5  = #bd97b6
+color13 = #b48ead
+
+# cyan
+color6  = #88c0d0
+color14 = #8fbcbb
+
+# white
+color7  = #e5e9f0
+color15 = #eceff4
+
 
 [hints]
 font = Hack 10
-foreground = #d9aa1a
-background = #252733
+foreground = #d8dee9
+background = #2e3440
 #active_foreground = #e68080
 #active_background = #3f3f3f
 #padding = 2
