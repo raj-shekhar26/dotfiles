@@ -12,7 +12,7 @@ fg-2 = #e5e9f0
 fg-3 = #eceff4
 
 [bar/mybar]
-override-redirect = true
+override-redirect = false
 bottom = false
 fixed-center = true
 width = 100%
@@ -59,8 +59,8 @@ tray-offset-y = 0
 tray-padding = 0
 
 [global/wm]
-margin-bottom = 0
-margin-top = 0
+margin-bottom = 3
+margin-top = 3
 
 [settings]
 label-focused-underline= ${colors.red}
@@ -91,7 +91,6 @@ ws-icon-5 = movie;
 ws-icon-6 = extra;
 
 label-focused = %icon% %name%
-label-focused-foreground = ${colors.nord8}
 label-focused-padding = 2
 
 label-occupied = %icon%
