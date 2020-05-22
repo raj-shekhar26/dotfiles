@@ -13,9 +13,9 @@
   --mff-tab-font-weight: bold;
   --mff-tab-height: 30px;
   --mff-tab-pinned-bg: #88c0d0;
-  --mff-tab-selected-bg: #8fbcbb;
+  --mff-tab-selected-bg: #81a1c1;
   --mff-tab-soundplaying-bg: #5e81ac;
-  --mff-urlbar-color: #8fbcbb;
+  --mff-urlbar-color: #81a1c1;
   --mff-urlbar-focused-color: #D8DEE9;
   --mff-urlbar-font-family: "Cantarell", sans;
   --mff-urlbar-font-size: 12pt;
@@ -24,7 +24,7 @@
   --mff-urlbar-results-font-family: "Cantarell", sans;
   --mff-urlbar-results-font-size: 12pt;
   --mff-urlbar-results-font-weight: 700;
-  --mff-urlbar-results-url-color: #8fbcbb;
+  --mff-urlbar-results-url-color: #81a1c1;
   /*   --mff-tab-selected-bg: linear-gradient(90deg, rgba(232,74,95,1) 0%, rgba(255,132,124,1) 50%, rgba(254,206,168,1) 100%); */
   /*   --mff-urlbar-font-weight: 600; */
 

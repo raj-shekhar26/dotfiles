@@ -1,10 +1,10 @@
 # terminal
 super + Return
-	termite
+	alacritty
 
 # apps
 super + shift + {b,c,f,m,s}
-	{firefox,code,pcmanfm,termite -e ncmpcpp,termite -e scrcpy}
+	{firefox,code,pcmanfm,alacritty -e ncmpcpp,alacritty -e scrcpy}
 
 # brightness keybindings
 XF86MonBrightness{Up,Down}
