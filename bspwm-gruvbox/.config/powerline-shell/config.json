@@ -1,0 +1,12 @@
+{
+  "segments": [
+    "virtual_env",
+    "ssh",
+    "cwd",
+    "git",
+    "jobs",
+    "hg",
+    "root"
+  ],
+  "theme": "gruvbox"
+}

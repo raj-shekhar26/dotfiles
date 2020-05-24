@@ -22,7 +22,7 @@ XF86AudioMute
 
 
 # system
-super + (F1,F2,F3}
+super + {F1,F2,F3}
 	systemctl {poweroff,reboot,suspend}
 
 # lockscreen
