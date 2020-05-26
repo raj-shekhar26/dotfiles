@@ -1,0 +1,178 @@
+[colors]
+background = #2E2E37
+foreground = #e6dfea
+color1 = #C44662
+
+[bar/mybar]
+override-redirect = false
+bottom = true
+fixed-center = true
+width = 100%
+height = 25
+background = ${colors.background}
+foreground = ${colors.foreground}
+radius = 0.0
+line-size = 0
+line-color = #f00
+offset-y = 0
+
+; Number of spaces to add at the beginning/end of the bar
+padding = 0
+
+; Number of spaces to add before/after each module
+module-margin = 0
+
+; Fonts are defined using <font-name>;<vertical-offset>
+font-0 = xos4 Terminus:style=Regular:pixelsize=9;2
+font-1 = "Wuncon Siji:size=9;3"
+
+; Modules are added to one of the available blocks
+modules-left = bspwm
+modules-center = xwindow
+modules-right = wireless-network alsa backlight pacman-updates battery date
+
+
+;separator =
+; This value is used to add extra spacing between elements
+; @deprecated: This parameter will be removed in an upcoming version
+spacing = 0
+; Opacity value between 0.0 and 1.0 used on fade in/out
+dim-value = 1.0
+
+; Position of the system tray window
+tray-position = left
+tray-maxsize = 15
+tray-background = ${colors.nord10}
+tray-offset-x = 0
+tray-offset-y = 0
+; Pad the sides of each tray icon
+tray-padding = 0
+
+[global/wm]
+margin-bottom = 0
+margin-top = 0
+
+[settings]
+label-focused-underline= ${colors.background}
+
+throttle-output = 5
+throttle-output-for = 10
+
+; Time in milliseconds that the input handler will wait between processing events
+throttle-input-for = 30label-focused-underline= ${colors.red}
+
+
+; Reload upon receiving XCB_RANDR_SCREEN_CHANGE_NOTIFY events
+screenchange-reload = true
+
+; Enables pseudo-transparency for the bar
+; If set to true the bar can be transparent without a compositor.
+pseudo-transparency = true
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused-background = ${colors.color1}
+label-focused = %name%
+label-focused-padding = 2
+label-occupied = %index%
+label-occupied-padding = 2
+label-empty =
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 2
+
+[module/date]
+type = internal/date
+interval = 5
+time = %H:%M
+label =  %time%
+label-padding = 1
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <label-full>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+
+format-charging-padding = 1
+format-discharging-padding = 1
+format-full-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-7 = 
+animation-charging-8 = 
+
+[module/wireless-network]
+type = internal/network
+interface = wlo1
+interval = 1.0
+format-connected-padding = 1
+unknown-as-up = true
+accumulate-stats = true
+format-connected = <ramp-signal> <label-connected>
+label-connected = %downspeed:7%
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+[module/xwindow]
+type = internal/xwindow
+
+format = <label>
+format-padding = 4
+label = %title%
+label-maxlen = 25
+label-empty =
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 1
+label-volume = %percentage%%
+
+format-muted-prefix = " "
+label-muted = Muted
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+[module/backlight]
+type = internal/xbacklight
+
+card = intel_backlight
+format = <ramp> <label>
+format-padding = 1
+label = %percentage%%
+ramp-0 = 
