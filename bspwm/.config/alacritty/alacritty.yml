@@ -161,7 +161,7 @@ colors:
   colors:
   # Default colors
   primary:
-    background: '0x2E2E37'
+    background: '0x222630'
     foreground: '0xe6dfea'
 
   # Normal colors
@@ -169,7 +169,7 @@ colors:
     black:   '0x626273'
     red:     '0xba504b'
     green:   '0x90C978'
-    yellow:  '0xcccc5b'
+    yellow:  '0xDAC53B'
     blue:    '0x5687bb'
     magenta: '0xC44662'
     cyan:    '0x5DB1D1'
@@ -204,7 +204,7 @@ colors:
   #
   # The indexed colors include all colors from 16 to 256.
   # When these are not set, they're filled with sensible defaults.
-  #
+  #5
   # Example:
   #   `- { index: 16, color: '#ff00ff' }`
   #

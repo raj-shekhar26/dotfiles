@@ -2,6 +2,9 @@
 super + Return
 	alacritty
 
+super + space
+	alacritty
+
 # apps
 super + shift + {b,c,f,m,s,v}
 	{firefox,code,pcmanfm,alacritty -e ncmpcpp,alacritty -e scrcpy,alacritty -e nvim}

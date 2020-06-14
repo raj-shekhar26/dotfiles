@@ -1,7 +1,7 @@
  :root {
 
    /* Minimal Functional Fox variables*/
-  --mff-bg: #2E2E37;
+  --mff-bg: #222630;
   --mff-icon-color: #e6dfea;
   --mff-nav-toolbar-padding: 8px;
   --mff-sidebar-bg: var(--mff-bg);
@@ -13,8 +13,8 @@
   --mff-tab-font-weight: bold;
   --mff-tab-height: 30px;
   --mff-tab-pinned-bg: #88c0d0;
-  --mff-tab-selected-bg: #5687bb;
-  --mff-tab-soundplaying-bg: #b84f76;
+  --mff-tab-selected-bg: #5DB1D1;
+  --mff-tab-soundplaying-bg: #C44662;
   --mff-urlbar-color: #e6dfea;
   --mff-urlbar-focused-color: #e6dfea;
   --mff-urlbar-font-family: "Cantarell", sans;

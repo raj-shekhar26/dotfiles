@@ -1,48 +1,56 @@
 [colors]
-background = #2E2E37
+background = #222630
 foreground = #e6dfea
 color1 = #C44662
+fg2 = #626273
 
 [bar/mybar]
 override-redirect = false
-bottom = true
+bottom = false
 fixed-center = true
-width = 100%
-height = 25
+width = 20%:-11
+height = 26
+background = ${colors.background}
+foreground = ${colors.foreground}
+radius = 0.0
+
+border-size = 2
+border-color = ${colors.color1}
+offset-y = 6
+offset-x = 30%
+
+font-0 = xos4 Terminus:style=Regular:pixelsize=11;2
+font-1 = Font Awesome 5 Free Solid:style=Solid:size=9;2
+font-2 = Font Awesome 5 Brands Regular:style=Regular:size=9;2
+
+modules-left =  bspwm 
+
+[bar/mybar2]
+override-redirect = false
+bottom = false
+fixed-center = true
+width = 19%:-9
+height = 26
 background = ${colors.background}
 foreground = ${colors.foreground}
 radius = 0.0
 line-size = 0
 line-color = #f00
-offset-y = 0
+border-size = 2
+border-color = ${colors.color1}
+offset-y = 6
+offset-x = 50%
 
-; Number of spaces to add at the beginning/end of the bar
-padding = 0
-
-; Number of spaces to add before/after each module
-module-margin = 0
-
-; Fonts are defined using <font-name>;<vertical-offset>
-font-0 = xos4 Terminus:style=Regular:pixelsize=9;2
+font-0 = xos4 Terminus:style=Regular:pixelsize=11;2
 font-1 = "Wuncon Siji:size=9;3"
+font-2 = Font Awesome 5 Free Solid:style=Solid:size=9;2
 
-; Modules are added to one of the available blocks
-modules-left = bspwm
-modules-center = xwindow
-modules-right = wireless-network alsa backlight pacman-updates battery date
-
-
-;separator =
-; This value is used to add extra spacing between elements
-; @deprecated: This parameter will be removed in an upcoming version
-spacing = 0
-; Opacity value between 0.0 and 1.0 used on fade in/out
-dim-value = 1.0
+modules-right = alsa backlight battery date powermenu
 
 ; Position of the system tray window
 tray-position = left
 tray-maxsize = 15
-tray-background = ${colors.nord10}
+tray-background = ${colors.background}
 tray-offset-x = 0
 tray-offset-y = 0
 ; Pad the sides of each tray icon
@@ -72,21 +80,33 @@ pseudo-transparency = true
 [module/bspwm]
 type = internal/bspwm
 
+ws-icon-0 = term;
+ws-icon-1 = firefox;龜
+ws-icon-2 = code;
+ws-icon-3 = files;
+ws-icon-4 = music;
+ws-icon-5 = movies;
+ws-icon-6 = extra;
+
+format = <label-state> <label-mode>
+
 label-focused-background = ${colors.color1}
-label-focused = %name%
+label-occupied-background = ${colors.background}
+label-empty-background = ${colors.background}
+label-focused = %icon%
 label-focused-padding = 2
-label-occupied = %index%
+label-occupied = %icon%
 label-occupied-padding = 2
-label-empty =
-label-empty-foreground = ${colors.foreground}
+label-empty = %icon%
+label-empty-foreground = ${colors.fg2}
 label-empty-padding = 2
 
 [module/date]
 type = internal/date
 interval = 5
 time = %H:%M
-label =  %time%
-label-padding = 1
+label = "  %time% "
+label-background = ${colors.background}
 
 [module/battery]
 type = internal/battery
@@ -99,6 +119,10 @@ format-discharging = <ramp-capacity> <label-discharging>
 format-full = <label-full>
 label-charging = %percentage%%
 label-discharging = %percentage%%
+
+format-charging-background = ${colors.background}
+format-discharging-background = ${colors.background}
+format-full-background = ${colors.background}
 
 format-charging-padding = 1
 format-discharging-padding = 1
@@ -125,31 +149,6 @@ animation-charging-6 = 
 animation-charging-7 = 
 animation-charging-8 = 
 
-[module/wireless-network]
-type = internal/network
-interface = wlo1
-interval = 1.0
-format-connected-padding = 1
-unknown-as-up = true
-accumulate-stats = true
-format-connected = <ramp-signal> <label-connected>
-label-connected = %downspeed:7%
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-
-[module/xwindow]
-type = internal/xwindow
-
-format = <label>
-format-padding = 4
-label = %title%
-label-maxlen = 25
-label-empty =
-
 [module/alsa]
 type = internal/alsa
 
@@ -157,8 +156,11 @@ format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 1
 label-volume = %percentage%%
 
+format-volume-background = ${colors.background}
+
 format-muted-prefix = " "
 label-muted = Muted
+format-muted-background = ${colors.background}
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -173,6 +175,15 @@ type = internal/xbacklight
 
 card = intel_backlight
 format = <ramp> <label>
+format-background = ${colors.background}
 format-padding = 1
 label = %percentage%%
 ramp-0 = 
+
+[module/powermenu]
+type = custom/text
+
+content = "    "
+content-background = ${colors.color1}
+click-left = exec systemctl poweroff
+click-right = exec systemctl reboot

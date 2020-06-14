@@ -3,7 +3,7 @@
 sxhkd &
 xsetroot -cursor_name left_ptr &
 
-bspc monitor -d terminal firefox code files music movies extra
+bspc monitor -d term firefox code files music movies extra
 
 bspc config border_width        0
 bspc config window_gap          8
@@ -14,11 +14,11 @@ bspc config single_monocle true
 bspc config gapless_monocle false
 
 bspc rule -a firefox desktop='^2' follow=on
-bspc rule -a qBittorrent desktop='^2' follow=on
 bspc rule -a code-oss desktop='^3'
 bspc rule -a Pcmanfm desktop='^4' follow=on
 bspc rule -a mpv state=floating desktop='^6' follow=on
 bspc rule -a Gimp-2.10 desktop='^7' follow=on focus=on
+bspc rule -a qBittorrent desktop='^7' follow=on
 bspc rule -a feh state=floating follow=on
 bspc rule -a Lxappearance state=floating follow=on
 bspc rule -a Screenkey manage=off
