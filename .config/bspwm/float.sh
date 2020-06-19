@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ # change the desktop number here
  FLOATING_DESKTOP_ID=$(bspc query -D -d '^7')
 
  bspc subscribe node_add | while read -a msg ; do
@@ -8,3 +9,4 @@
     [ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && bspc node "$wid" -t floating
  done
  
+

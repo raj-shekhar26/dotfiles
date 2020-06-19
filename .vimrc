@@ -13,6 +13,7 @@ set ignorecase
 set smartcase
 set laststatus=2
 set showmode!
+inoremap hh <esc>
 
 function! FileSize() abort
     let l:bytes = getfsize(expand('%p'))
