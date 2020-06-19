@@ -1,0 +1,30 @@
+#! /bin/sh
+
+sxhkd &
+
+bspc monitor -d term firefox editor files music video extra 
+bspc config border_width         0
+bspc config window_gap          8
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      false
+bspc config single_monocle 	 true
+
+bspc config normal_border_color "#6c757d"
+bspc config focused_border_color "#5bc0eb"
+
+bspc rule -a firefox desktop='^2' follow=on
+bspc rule -a code-oss desktop='^3'
+bspc rule -a Pcmanfm desktop='^4' follow=on
+bspc rule -a mpv state=floating desktop='^6' follow=on
+bspc rule -a qBittorrent desktop='^7' follow=on
+bspc rule -a feh state=floating follow=on
+bspc rule -a Lxappearance state=floating follow=on
+
+$HOME/.config/polybar/launch.sh
+~/.fehbg
+mpd &
+dunst &
+picom &
+./.config/bspwm/float.sh &

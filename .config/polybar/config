@@ -1,0 +1,189 @@
+[colors]
+background = #00000000
+foreground = #d8dee9
+color1 = #a0c4ff
+color2 = #ee7674
+color3 = #ffadad
+bg2 = #22222F
+fg2 = #626273
+fg3 = #ffffff
+
+[bar/mybar]
+override-redirect = false
+bottom = false
+fixed-center = true
+width = 99%:-3
+height = 26
+background = ${colors.background}
+foreground = ${colors.foreground}
+radius = 0.0
+line-size = 0
+line-color = #f00
+offset-y = 8
+offset-x = 8
+
+font-0 = xos4 Terminus:style=Regular:pixelsize=8;2
+font-1 = "Siji:size=9;3"
+
+modules-right = network alsa battery date powermenu
+modules-left =  bspwm
+
+; Position of the system tray window
+tray-position = left
+tray-maxsize = 15
+tray-background = ${colors.bg2}
+tray-offset-x = 0
+tray-offset-y = 0
+; Pad the sides of each tray icon
+tray-padding = 0
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = term;
+ws-icon-1 = firefox;龜
+ws-icon-2 = editor;
+ws-icon-3 = files;
+ws-icon-4 = music;
+ws-icon-5 = video;
+ws-icon-6 = extra;
+
+format = <label-state> <label-mode>
+
+label-focused-background = ${colors.color1}
+label-focused-foreground = ${colors.bg2}
+label-occupied-background = ${colors.bg2}
+label-empty-background = ${colors.bg2}
+label-focused = %index%
+label-focused-padding = 2
+label-occupied = %index%
+label-occupied-padding = 2
+label-empty = %index%
+label-empty-padding = 2
+
+[global/wm]
+margin-bottom = 0
+margin-top = 0
+
+[settings]
+label-focused-underline= ${colors.background}
+
+throttle-output = 5
+throttle-output-for = 10
+
+; Time in milliseconds that the input handler will wait between processing events
+throttle-input-for = 30label-focused-underline= ${colors.red}
+
+
+; Reload upon receiving XCB_RANDR_SCREEN_CHANGE_NOTIFY events
+screenchange-reload = true
+
+pseudo-transparency = true
+
+[module/date]
+type = internal/date
+interval = 1.0
+time = %H:%M
+label = "  %time% "
+label-background = ${colors.bg2}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <label-full>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+
+format-charging-background = ${colors.bg2}
+format-discharging-background = ${colors.bg2}
+format-full-background = ${colors.bg2}
+
+format-charging-padding = 1
+format-discharging-padding = 1
+format-full-padding = 1
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-7 = 
+animation-charging-8 = 
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 1
+label-volume = %percentage%%
+
+format-volume-background = ${colors.bg2}
+
+format-muted-prefix = " "
+label-muted = Muted
+format-muted-background = ${colors.bg2}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-headphones-0 = 
+ramp-headphones-1 = 
+
+[module/backlight]
+type = internal/xbacklight
+
+card = intel_backlight
+format = <ramp> <label>
+format-background = ${colors.bg2}
+format-padding = 1
+label = %percentage%%
+ramp-0 = 
+
+[module/powermenu]
+type = custom/text
+
+content = "    "
+content-background = ${colors.color3}
+content-foreground = ${colors.bg2}
+click-left = exec systemctl poweroff
+click-right = exec systemctl reboot
+
+[module/network]
+type = internal/network
+interface = wlo1
+interval = 3.0
+format-connected-background = ${colors.bg2}
+format-connected-padding = 1
+
+
+unknown-as-up = true
+accumulate-stats = true
+format-connected = <ramp-signal> <label-connected>
+label-connected = %downspeed:7%
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
