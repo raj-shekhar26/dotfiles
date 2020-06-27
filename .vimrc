@@ -1,5 +1,5 @@
 set number
-highlight LineNr ctermfg=magenta
+highlight LineNr ctermfg=blue
 syntax on
 set wrap
 set autoindent
@@ -38,9 +38,9 @@ function! FileSize() abort
 endfunction
 
 hi User1 ctermfg=black ctermbg=red
-hi User2 ctermfg=black ctermbg=green
+hi User2 ctermfg=black ctermbg=blue
 hi User3 ctermfg=black ctermbg=yellow
-hi User4 ctermfg=black ctermbg=blue
+hi User4 ctermfg=none ctermbg=black
 hi User5 ctermfg=black ctermbg=cyan
 hi User6 ctermfg=magenta ctermbg=black
 

@@ -1,49 +1,45 @@
-! Colorscheme
-
 ! special
 *.foreground:   #d8dee9
-*.background:   #22222f
-*.cursorColor:  #d8dee9
+*.background:   #151515
 
 ! black
-*.color0:       #22222f
+*.color0:       #151515
 *.color8:       #6c757d
 
 ! red
-*.color1:       #ee7674
-*.color9:       #ee7674
+*.color1:       #fe5f55
+*.color9:       #fe5f55
 
 ! green
-*.color2:       #60d394
-*.color10:      #60d394
+*.color2:       #77bfa3
+*.color10:      #77bfa3
 
 ! yellow
-*.color3:       #E1CF90
-*.color11:      #E1CF90
+*.color3:       #f0c674
+*.color11:      #f0c674
 
 ! blue
-*.color4:       #a0c4ff
-*.color12:      #a0c4ff
+*.color4:       #b084cc
+*.color12:      #b084cc
 
 ! magenta
-*.color5:       #ffadad
-*.color13:      #ffadad
+*.color5:       #ef6f6c
+*.color13:      #ef6f6c
 
 ! cyan
-*.color6:       #5bc0eb
-*.color14:      #5bc0eb
+*.color6:       #62bfed
+*.color14:      #62bfed
 
 ! white
-*.color7:       #d8dee9
+*.color7:       #6c757d
 *.color15:      #d8dee9
 
 ! Appearance
-
 *.scrollBar: false
-*.internalBorder: 26
-*.letterSpace: 0
 *.lineSpace: 1
+*.internalBorder: 28
 *.font: xft:Dina:style=Regular:size=8
 *.boldFont: xft:Dina:style=Bold:size=8
 *.italicFont: xft:Dina:style=Italic:size=8
 *.boldItalicFont: xft:Dina:style=Bold Italic:size=8
+
