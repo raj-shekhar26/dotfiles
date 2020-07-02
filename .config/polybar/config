@@ -1,25 +1,33 @@
 [colors]
-background = #151515
-foreground = #d8dee9
-color1 = #6c757d 
+background = ${xrdb:background}
+background-alt = #2D323D
+foreground = ${xrdb:foreground}
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2} 
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+color6 = ${xrdb:color6}
+color8 = ${xrdb:color8}
 
 [bar/mybar]
 override-redirect = false 
 bottom = false
-fixed-center = true
-width = 36%
-height = 26
 background = ${colors.background}
 foreground = ${colors.foreground}
+fixed-center = true
+width = 100%
+height = 26
 radius = 0.0
 line-size = 0
 line-color = #f00
-offset-y = 12
-offset-x = 32%
+offset-y = 0
+offset-x = 0
 
-font-0 = xos4 Terminus:style=Regular:pixelsize=8;2
+font-0 = scientifica:style=Regular:pixelsize=8;2
 
-modules-right = network battery date
+modules-right = network alsa backlight cpu battery date
+modules-center =
 modules-left =  bspwm
 ; Position of the system tray window
 tray-position = left
@@ -28,20 +36,25 @@ tray-background = ${colors.background}
 tray-offset-x = 0
 tray-offset-y = 0
 ; Pad the sides of each tray icon
-tray-padding = 0
+tray-padding = 1
 
 [module/bspwm]
 type = internal/bspwm
 format = <label-state> <label-mode>
 
-label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.color1}
-label-focused = %index%
+label-empty-foreground = ${colors.color8}
+label-focused-background = ${colors.background-alt} 
+label-focused = %name%
 label-focused-padding = 2
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-padding = 2
-label-empty = %index%
+label-empty = %name%
 label-empty-padding = 2
+
+label-monocle = M 
+label-tiled = T
+label-floating = F
+label-pseudotiled = P
 
 [settings]
 label-focused-underline= ${colors.background}
@@ -53,10 +66,13 @@ pseudo-transparency = true
 
 [module/date]
 type = internal/date
-interval = 1.0
 time = %H:%M
-label = "%time% "
-label-padding = 2
+format = TIME <label>
+#format-background = #55ff3399
+format-foreground = ${colors.color1} 
+format-padding = 2
+label = %time%
+label-foreground = ${colors.foreground} 
 
 [module/battery]
 type = internal/battery
@@ -64,22 +80,64 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <label-charging>
-format-discharging = <label-discharging>
-format-full = <label-full>
+format-charging = BAT <label-charging>
+format-discharging = BAT <label-discharging>
+format-full = BAT <label-full>
 label-charging = %percentage%%
 label-discharging = %percentage%%
 
+label-charging-foreground = ${colors.foreground}
+label-discharging-foreground = ${colors.foreground}
+label-full-foreground = ${colors.foreground}
+
+format-charging-foreground = ${colors.color2}
+format-discharging-foreground = ${colors.color2}
+format-full-foreground = ${colors.color2}
+
 format-charging-padding = 1
 format-discharging-padding = 1
+format-full-padding = 1
 
 [module/network]
 type = internal/network
 interface = wlo1
 interval = 3.0
-format-connected-padding = 2
 unknown-as-up = true
 accumulate-stats = true
-format-connected = <label-connected>
-label-connected = %downspeed:7%
 
+format-connected = WIFI <label-connected>
+label-connected = %essid%
+format-connected-padding = 1
+format-connected-foreground = ${colors.color4}
+label-connected-foreground = ${colors.foreground}
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = VOL <label-volume>
+label-muted = muted
+label-muted-padding = 2
+label-volume-foreground = ${colors.foreground}
+format-volume-foreground = ${colors.color5}
+format-volume-padding = 2
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+enable-scroll = true
+
+format = BL <label>
+format-padding = 1
+format-foreground = ${colors.color6}
+label-foreground = ${colors.foreground}
+label = %percentage%%
+
+[module/cpu]
+type = internal/cpu
+
+format = CPU <label>
+format-foreground = ${colors.color3}
+format-padding = 2
+label = %percentage%%
+label-foreground = ${colors.foreground}

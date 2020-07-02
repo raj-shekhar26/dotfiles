@@ -5,10 +5,10 @@ visualizer_look = ●┃
 visualizer_color = white
 
 song_list_format = "{{%a  %t}|{%f}}{$R%l}"
-current_item_prefix = $(blue)$r
+current_item_prefix = $(green)$r
 
 current_item_inactive_column_prefix = $(black)$r
-now_playing_prefix = "$b$5"
+now_playing_prefix = "$b$3"
 now_playing_suffix = "$/b$9"
 execute_on_song_change = notify-send "Now Playing" "$(mpc current)"
 
@@ -20,8 +20,7 @@ titles_visibility = "no"
 
 follow_now_playing_lyrics = yes
 fetch_lyrics_for_current_song_in_background = yes
-store_lyrics_in_song_dir = yes
 main_window_color = white
 
 progressbar_look = "─╼ "
-progressbar_elapsed_color = "white"
+progressbar_elapsed_color = "green"

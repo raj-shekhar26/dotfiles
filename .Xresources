@@ -1,45 +1,55 @@
 ! special
-*.foreground:   #d8dee9
-*.background:   #151515
+*.foreground:   #9faab8
+*.background:   #232731
+*.cursorColor:  #9faab8
 
 ! black
-*.color0:       #151515
-*.color8:       #6c757d
+*.color0:       #232731
+*.color8:       #6f798c
 
 ! red
-*.color1:       #fe5f55
-*.color9:       #fe5f55
+*.color1:       #a65f69
+*.color9:       #a65f69
 
 ! green
-*.color2:       #77bfa3
-*.color10:      #77bfa3
+*.color2:       #3b8563
+*.color10:      #3b8563
 
 ! yellow
-*.color3:       #f0c674
-*.color11:      #f0c674
+*.color3:       #b39669
+*.color11:      #b39669
 
 ! blue
-*.color4:       #b084cc
-*.color12:      #b084cc
+*.color4:       #487799
+*.color12:      #487799
 
 ! magenta
-*.color5:       #ef6f6c
-*.color13:      #ef6f6c
+*.color5:       #b9637e
+*.color13:      #b9637e
 
 ! cyan
-*.color6:       #62bfed
-*.color14:      #62bfed
+*.color6:       #348396
+*.color14:      #348396
 
 ! white
-*.color7:       #6c757d
-*.color15:      #d8dee9
+*.color7:       #6f798c
+*.color15:      #9faab8
 
 ! Appearance
+
 *.scrollBar: false
 *.lineSpace: 1
-*.internalBorder: 28
-*.font: xft:Dina:style=Regular:size=8
-*.boldFont: xft:Dina:style=Bold:size=8
-*.italicFont: xft:Dina:style=Italic:size=8
-*.boldItalicFont: xft:Dina:style=Bold Italic:size=8
+*.internalBorder: 26
+*.font: xft:Tamzen:style=Regular:size=8
+*.boldFont: xft:Tamzen:style=Bold:size=8
+*.italicFont: xft:Tamzen:style=Italic:size=8
+*.boldItalicFont: xft:Tamzen:style=Bold Italic:size=8
+URxvt.cursorUnderline: true
+
+! Navigations
+
+URxvt.keysym.Control-Left:        \033[1;5D
+URxvt.keysym.Control-Right:       \033[1;5C
+URxvt.keysym.Control-Up:          \033[1;5A
+URxvt.keysym.Control-Down:        \033[1;5B
 

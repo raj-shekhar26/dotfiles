@@ -1,4 +1,3 @@
-#!/bin/bash
 # wm independent hotkeys
 #
 
@@ -8,11 +7,11 @@ super + Return
 
 # program launcher
 super + @space
-        dmenu_run -b -fn "Dina" -nb "#151515" -nf "#d8dee9" -sb "#b084cc" -sf "#151515"
+        dmenu_run -fn "Dina" -nb "#232731" -nf "#9faab8" -sb "#3b8563" -sf "#232731"
 
 # apps
-super + shift + {b,f,m,v}
-        {firefox,urxvt -e ranger,urxvt -e ncmpcpp,urxvt -e vim}
+super + shift + {b,f,m,v,p,t}
+        {firefox-bin,urxvt -e ranger,urxvt -e ncmpcpp,urxvt -e vim,pcmanfm,qbittorrent}
 
 # brightness keybindings
 XF86MonBrightness{Up,Down}
@@ -24,9 +23,9 @@ XF86Audio{Next,Prev,Play,Stop}
 
 # volume
 XF86Audio{RaiseVolume,LowerVolume}
-        amixer -q sset Master,0 {'5+','5-'}
+        amixer -q sset Master {5%+,5%-}
 XF86AudioMute
-        amixer -q sset Master,0 toggle
+        amixer -q sset Master toggle
 
 # screenshot keybindings
 Print
@@ -43,17 +42,17 @@ super + Escape
 #
 
 # gaps
-super + g
+super + alt  + g
     bspc config window_gap 0
 super + shift + g
     bspc config window_gap 12
 
 # quit/restart bspwm
-super + shift + {q,r}
+super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
+super + {_,alt + }w
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
@@ -65,7 +64,7 @@ super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the biggest node
-super + g
+super + b
 	bspc node -s biggest
 
 #
@@ -73,7 +72,7 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
+super + {t,alt + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
